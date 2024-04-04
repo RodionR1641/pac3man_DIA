@@ -24,10 +24,10 @@ class LeftTurnAgent(game.Agent):
     def getAction(self, state):
         legal = state.getLegalPacmanActions()
         current = state.getPacmanState().configuration.direction
-        if current == Directions.STOP: current = Directions.NORTH
+        if current == Directions.STOP: current = Directions.NORTH #just go north if hit the wall
         left = Directions.LEFT[current]
-        if left in legal: return left
-        if current in legal: return current
+        if left in legal: return left # if left is a legal action -> just go left
+        if current in legal: return current # else just go in the current direction if cant go left
         if Directions.RIGHT[current] in legal: return Directions.RIGHT[current]
         if Directions.LEFT[left] in legal: return Directions.LEFT[left]
         return Directions.STOP

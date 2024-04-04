@@ -53,14 +53,15 @@ class Directions:
     WEST = 'West'
     STOP = 'Stop'
 
-    LEFT =       {NORTH: WEST,
+    #this is if pacman is facing left, so its north is west etc
+    LEFT =       {NORTH: WEST, 
                    SOUTH: EAST,
                    EAST:  NORTH,
                    WEST:  SOUTH,
                    STOP:  STOP}
-
+    #opposite of right
     RIGHT =      dict([(y,x) for x, y in LEFT.items()])
-
+    #facing down
     REVERSE = {NORTH: SOUTH,
                SOUTH: NORTH,
                EAST: WEST,
